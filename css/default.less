@@ -112,6 +112,44 @@ textarea {
     display : none !important;
     }
 
+
+/*
+ * Hide placeholder when focused
+ */
+
+.hidePlaceholder:focus::-webkit-input-placeholder {
+    color: transparent
+    }
+
+.hidePlaceholder:focus:-moz-placeholder {
+    color: transparent
+    }
+
+.hidePlaceholder:focus::-moz-placeholder {
+    color: transparent
+    }
+
+.hidePlaceholder:focus:-ms-input-placeholder {
+    color: transparent
+    }
+
+
+
+/*
+ * Disables selection fot the corrent element
+ */
+
+.unselectable  {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+    }
+
+
 /*
  * Hide only visually, but have it available for screen readers:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
