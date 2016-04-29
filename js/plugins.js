@@ -1,7 +1,8 @@
 // Avoid `console` errors in browsers that lack a console.
-(function() {
+(function () {
     var method;
-    var noop = function () {};
+    var noop = function () {
+    };
     var methods = [
         'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
         'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
@@ -25,11 +26,11 @@
 
 
 //Performs a smooth page scroll to an anchor on the same page.
-$(function() {
-    $('a[href*="#"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+$(function () {
+    $('a[href*="#"]:not([href="#"])').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if (target.length) {
                 $('html, body').animate({
                     scrollTop: target.offset().top
@@ -39,3 +40,62 @@ $(function() {
         }
     });
 });
+
+// preloader script
+$('.f_page').waitForImages(function () {
+    $(this).removeClass('hide');
+});
+
+// simple slider use if needed
+//$(function () {
+//    var pageSliderElements = $('.SLIDER_ELEMENTS_CLASS_HERE');
+//    (function backgroundAnimation(index) {
+//        pageSliderElements.addClass('nonOpaque');
+//        pageSliderElements.removeClass('nonOpaque').eq(index).addClass('nonOpaque');
+//        setTimeout(function () {
+//            backgroundAnimation((index + 1) % pageSliderElements.length);
+//        }, 6000);
+//    }(0));
+//});
+
+// Mouse move animations
+//$('#f_categories').mousemove(function (e) {
+//    var x = (e.pageX * -1 / 25 + $(window).width() / 50);
+//    $('.categories').css({'transform': 'translateX(' + x + 'px)', 'transition': 'transform 50ms ease'});
+//}).mouseout(function () {
+//    $(this).removeAttr("style");
+//});
+
+
+//timer function
+function myTimer(elem, maxTime, timeStep) {
+    var i = 0;
+    test();
+    function test() {
+        setTimeout(function () {
+            elem.text(i);
+            i++;
+            if (i < maxTime) {
+                test();
+            } else {
+                console.log('end');
+                return false;
+            }
+        }, timeStep);
+    }
+}
+
+
+//character counter for any textarea
+function charCounter(textAreaEl, counterEl, maxText) {
+    $(counterEl).text(maxText);
+    var remaining = maxText - $(textAreaEl).val().length;
+    $(counterEl).text(remaining);
+    $(textAreaEl).keyup(function () {
+        remaining = maxText - $(textAreaEl).val().length;
+        if ($(textAreaEl).val().length >= maxText) {
+            $(this).val($(this).val().substr(0, maxText))
+        }
+        $(counterEl).text(remaining);
+    });
+}
