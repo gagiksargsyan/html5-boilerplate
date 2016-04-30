@@ -153,68 +153,66 @@ button:focus {
     display         : inline-block;
     position        : relative;
     text-decoration : none;
-    }
+    &:hover,
+    &:focus {
+        color : #36c;
+        }
+    &:active {
+        top : 1px;
+        }
+    /* Tooltip styling */
+    &[data-tooltip]:after {
+        border-top   : 8px solid #222;
+        border-top   : 8px solid hsla(0, 0%, 0%, .85);
+        border-left  : 8px solid transparent;
+        border-right : 8px solid transparent;
+        content      : "";
+        display      : none;
+        height       : 0;
+        width        : 0;
+        left         : 25%;
+        position     : absolute;
+        }
+    &[data-tooltip]:before {
+        background            : #222;
+        background            : hsla(0, 0%, 0%, .85);
+        color                 : #f6f6f6;
+        content               : attr(data-tooltip);
+        display               : none;
+        font-family           : sans-serif;
+        font-size             : 14px;
+        height                : 32px;
+        left                  : 0;
+        line-height           : 32px;
+        padding               : 0 15px;
+        position              : absolute;
+        text-shadow           : 0 1px 1px hsla(0, 0%, 0%, 1);
+        white-space           : nowrap;
+        -webkit-border-radius : 5px;
+        -moz-border-radius    : 5px;
+        -o-border-radius      : 5px;
+        border-radius         : 5px;
+        }
 
-.addToolTip:hover,
-.addToolTip:focus {
-    color : #36c;
-    }
+    &[data-tooltip]:hover:after {
+        display : block;
+        top     : -9px;
+        }
 
-.addToolTip:active {
-    top : 1px;
-    }
+    &[data-tooltip]:hover:before {
+        display : block;
+        top     : -41px;
+        }
 
-/* Tooltip styling */
-.addToolTip[data-tooltip]:after {
-    border-top   : 8px solid #222;
-    border-top   : 8px solid hsla(0, 0%, 0%, .85);
-    border-left  : 8px solid transparent;
-    border-right : 8px solid transparent;
-    content      : "";
-    display      : none;
-    height       : 0;
-    width        : 0;
-    left         : 25%;
-    position     : absolute;
-    }
+    &[data-tooltip]:active:after {
+        top : -10px;
+        }
 
-.addToolTip[data-tooltip]:before {
-    background            : #222;
-    background            : hsla(0, 0%, 0%, .85);
-    color                 : #f6f6f6;
-    content               : attr(data-tooltip);
-    display               : none;
-    font-family           : sans-serif;
-    font-size             : 14px;
-    height                : 32px;
-    left                  : 0;
-    line-height           : 32px;
-    padding               : 0 15px;
-    position              : absolute;
-    text-shadow           : 0 1px 1px hsla(0, 0%, 0%, 1);
-    white-space           : nowrap;
-    -webkit-border-radius : 5px;
-    -moz-border-radius    : 5px;
-    -o-border-radius      : 5px;
-    border-radius         : 5px;
-    }
+    &[data-tooltip]:active:before {
+        top : -42px;
+        }
 
-.addToolTip[data-tooltip]:hover:after {
-    display : block;
-    top     : -9px;
-    }
 
-.addToolTip[data-tooltip]:hover:before {
-    display : block;
-    top     : -41px;
-    }
-
-.addToolTip[data-tooltip]:active:after {
-    top : -10px;
-    }
-
-.addToolTip[data-tooltip]:active:before {
-    top : -42px;
     }
 
 /*
