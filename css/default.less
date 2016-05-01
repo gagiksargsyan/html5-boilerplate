@@ -11,7 +11,6 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-
 * {
     margin             : 0;
     padding            : 0;
@@ -19,7 +18,6 @@
     -moz-box-sizing    : border-box;
     box-sizing         : border-box;
     }
-
 
 html {
     color       : #222;
@@ -212,7 +210,6 @@ button:focus {
         top : -42px;
         }
 
-
     }
 
 /*
@@ -380,12 +377,14 @@ pre {
     *:after,
     *:first-letter,
     *:first-line {
-        background  : transparent !important;
-        color       : #000 !important;
+        background         : transparent !important;
+        color              : #000 !important;
         /* Black prints faster:
                                           http://www.sanbeiji.com/archives/953 */
-        box-shadow  : none !important;
-        text-shadow : none !important;
+        -webkit-box-shadow : none !important;
+        -moz-box-shadow    : none !important;
+        box-shadow         : none !important;
+        text-shadow        : none !important;
         }
 
     a,
