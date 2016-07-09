@@ -42,8 +42,10 @@ $(function () {
 });
 
 // preloader script
-$('.f_page').waitForImages(function () {
-    $(this).removeClass('hide');
+
+$('body').waitForImages(function () {
+    $('#f_page').removeClass('hide');
+    $('#f_loader').addClass('hide');
 });
 
 // simple slider use if needed
