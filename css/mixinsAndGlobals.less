@@ -1,6 +1,22 @@
 // Mixins
 @cache-version: `( new Date() ).getTime()` ;
-.transition-duration(@transition) {
+
+.font-face (@fontName,@fontNamePath,@fontWeight:Normal,@fontStyle:Normal){
+    @font-face {
+        font-family: '@{fontName}';
+        src: url('@{fontNamePath}.eot?v=@{cache-version}');
+        src: local('@{fontName}'), local('@{fontName}'),
+        url('@{fontNamePath}.eot?#iefix?v=@{cache-version}') format('embedded-opentype'),
+        url('@{fontNamePath}.woff2?v=@{cache-version}') format('woff2'),
+        url('@{fontNamePath}.woff?v=@{cache-version}') format('woff'),
+        url('@{fontNamePath}.ttf?v=@{cache-version}') format('truetype'),
+        url('@{fontNamePath}.svg?v=@{cache-version}#@{fontName}') format('svg');
+        font-weight: @fontWeight;
+        font-style: @fontStyle;
+        }
+    }
+
+.transition-duration(@transition:300ms) {
     -webkit-transition-duration : @transition;
     -moz-transition-duration    : @transition;
     -ms-transition-duration     : @transition;
@@ -8,7 +24,7 @@
     transition-duration         : @transition;
     }
 
-.transition(@transition) {
+.transition(@transition:"all 300ms ease") {
     -webkit-backface-visibility : hidden;
     -moz-backface-visibility    : hidden;
     -ms-backface-visibility     : hidden;
@@ -20,20 +36,20 @@
     transition                  : @transition;
     }
 
-.transition-delay(@delayTime) {
+.transition-delay(@delayTime:1s) {
     -webkit-transition-delay : @delayTime;
     -moz-transition-delay    : @delayTime;
     -o-transition-delay      : @delayTime;
     transition-delay         : @delayTime;
     }
 
-.border-radius (@string) {
+.border-radius (@string:100%) {
     -webkit-border-radius : @string;
     -moz-border-radius    : @string;
     border-radius         : @string;
     }
 
-.opacity (@string) {
+.opacity (@string:1) {
     filter          : ~"alpha(opacity= "@string*100~")";
     -khtml-opacity  : @string;
     -webkit-opacity : @string;
@@ -50,15 +66,48 @@
     transform         : @string1;
     }
 
-.backgroundSize(@string) {
+.background-size(@string:cover) {
     -webkit-background-size : @string;
     -moz-background-size    : @string;
     -o-background-size      : @string;
     background-size         : @string;
     }
 
-.box-shadow (@string) {
+.background-image(@pathName) {
+    background-image : url('@{pathName}v=@{cache-version}');
+    }
+
+.perspective (@value: 1000) {
+    -webkit-perspective: 	@value;
+    -moz-perspective: 	@value;
+    -ms-perspective: 	@value;
+    perspective: 		@value;
+    }
+
+.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+    -webkit-animation: @name @duration @delay @ease;
+    -moz-animation:    @name @duration @delay @ease;
+    -ms-animation:     @name @duration @delay @ease;
+    }
+
+.box-shadow (@string:'0 0 20px 10px #000') {
     -webkit-box-shadow : @string;
     -moz-box-shadow    : @string;
     box-shadow         : @string;
+    }
+
+.transform-origin (@x:center, @y:center) {
+    -webkit-transform-origin: @x @y;
+    -moz-transform-origin:    @x @y;
+    -ms-transform-origin:     @x @y;
+    -o-transform-origin:      @x @y;
+    }
+
+.gradient (@startColor: #eee, @endColor: white) {
+    background-color: @startColor;
+    background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+    background: -webkit-linear-gradient(top, @startColor, @endColor);
+    background: -moz-linear-gradient(top, @startColor, @endColor);
+    background: -ms-linear-gradient(top, @startColor, @endColor);
+    background: -o-linear-gradient(top, @startColor, @endColor);
     }
