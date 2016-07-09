@@ -1,113 +1,113 @@
 // Mixins
-@cache-version: `( new Date() ).getTime()` ;
-
-.font-face (@fontName,@fontNamePath,@fontWeight:Normal,@fontStyle:Normal){
-    @font-face {
-        font-family: '@{fontName}';
-        src: url('@{fontNamePath}.eot?v=@{cache-version}');
-        src: local('@{fontName}'), local('@{fontName}'),
-        url('@{fontNamePath}.eot?#iefix?v=@{cache-version}') format('embedded-opentype'),
-        url('@{fontNamePath}.woff2?v=@{cache-version}') format('woff2'),
-        url('@{fontNamePath}.woff?v=@{cache-version}') format('woff'),
-        url('@{fontNamePath}.ttf?v=@{cache-version}') format('truetype'),
-        url('@{fontNamePath}.svg?v=@{cache-version}#@{fontName}') format('svg');
-        font-weight: @fontWeight;
-        font-style: @fontStyle;
-        }
+/* Use BEM system for css class names https://css-tricks.com/bem-101*/
+/* This CSS file has been created using http://cssguidelin.es/ standards*/
+@cache-version : `( new Date() ).getTime()`;
+.font-face (@fontName,@fontNamePath,@fontWeight:Normal,@fontStyle:Normal) {
+  @font-face {
+    font-family : '@{fontName}';
+    src         : url('@{fontNamePath}.eot?v=@{cache-version}');
+    src         : local('@{fontName}'), local('@{fontName}'),
+    url('@{fontNamePath}.eot?#iefix?v=@{cache-version}') format('embedded-opentype'),
+    url('@{fontNamePath}.woff2?v=@{cache-version}') format('woff2'),
+    url('@{fontNamePath}.woff?v=@{cache-version}') format('woff'),
+    url('@{fontNamePath}.ttf?v=@{cache-version}') format('truetype'),
+    url('@{fontNamePath}.svg?v=@{cache-version}#@{fontName}') format('svg');
+    font-weight : @fontWeight;
+    font-style  : @fontStyle;
     }
+  }
 
 .transition-duration(@transition:300ms) {
-    -webkit-transition-duration : @transition;
-    -moz-transition-duration    : @transition;
-    -ms-transition-duration     : @transition;
-    -o-transition-duration      : @transition;
-    transition-duration         : @transition;
-    }
+  -webkit-transition-duration : @transition;
+  -moz-transition-duration    : @transition;
+  -ms-transition-duration     : @transition;
+  -o-transition-duration      : @transition;
+  transition-duration         : @transition;
+  }
 
 .transition(@transition:"all 300ms ease") {
-    -webkit-backface-visibility : hidden;
-    -moz-backface-visibility    : hidden;
-    -ms-backface-visibility     : hidden;
-    backface-visibility         : hidden;
-    -webkit-transition          : @transition;
-    -moz-transition             : @transition;
-    -ms-transition              : @transition;
-    -o-transition               : @transition;
-    transition                  : @transition;
-    }
+  -webkit-backface-visibility : hidden;
+  -moz-backface-visibility    : hidden;
+  -ms-backface-visibility     : hidden;
+  backface-visibility         : hidden;
+  -webkit-transition          : @transition;
+  -moz-transition             : @transition;
+  -ms-transition              : @transition;
+  -o-transition               : @transition;
+  transition                  : @transition;
+  }
 
 .transition-delay(@delayTime:1s) {
-    -webkit-transition-delay : @delayTime;
-    -moz-transition-delay    : @delayTime;
-    -o-transition-delay      : @delayTime;
-    transition-delay         : @delayTime;
-    }
+  -webkit-transition-delay : @delayTime;
+  -moz-transition-delay    : @delayTime;
+  -o-transition-delay      : @delayTime;
+  transition-delay         : @delayTime;
+  }
 
 .border-radius (@string:100%) {
-    -webkit-border-radius : @string;
-    -moz-border-radius    : @string;
-    border-radius         : @string;
-    }
+  -webkit-border-radius : @string;
+  -moz-border-radius    : @string;
+  border-radius         : @string;
+  }
 
 .opacity (@string:1) {
-    filter          : ~"alpha(opacity= "@string*100~")";
-    -khtml-opacity  : @string;
-    -webkit-opacity : @string;
-    -moz-opacity    : @string;
-    opacity         : @string;
-
-    }
+  filter          : ~"alpha(opacity= "@string*100~")";
+  -khtml-opacity  : @string;
+  -webkit-opacity : @string;
+  -moz-opacity    : @string;
+  opacity         : @string;
+  }
 
 .transform(@string1) {
-    -webkit-transform : @string1;
-    -moz-transform    : @string1;
-    -ms-transform     : @string1;
-    -o-transform      : @string1;
-    transform         : @string1;
-    }
+  -webkit-transform : @string1;
+  -moz-transform    : @string1;
+  -ms-transform     : @string1;
+  -o-transform      : @string1;
+  transform         : @string1;
+  }
 
 .background-size(@string:cover) {
-    -webkit-background-size : @string;
-    -moz-background-size    : @string;
-    -o-background-size      : @string;
-    background-size         : @string;
-    }
+  -webkit-background-size : @string;
+  -moz-background-size    : @string;
+  -o-background-size      : @string;
+  background-size         : @string;
+  }
 
 .background-image(@pathName) {
-    background-image : url('@{pathName}v=@{cache-version}');
-    }
+  background-image : url('@{pathName}v=@{cache-version}');
+  }
 
 .perspective (@value: 1000) {
-    -webkit-perspective: 	@value;
-    -moz-perspective: 	@value;
-    -ms-perspective: 	@value;
-    perspective: 		@value;
-    }
+  -webkit-perspective : @value;
+  -moz-perspective    : @value;
+  -ms-perspective     : @value;
+  perspective         : @value;
+  }
 
 .animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
-    -webkit-animation: @name @duration @delay @ease;
-    -moz-animation:    @name @duration @delay @ease;
-    -ms-animation:     @name @duration @delay @ease;
-    }
+  -webkit-animation : @name @duration @delay @ease;
+  -moz-animation    : @name @duration @delay @ease;
+  -ms-animation     : @name @duration @delay @ease;
+  }
 
 .box-shadow (@string:'0 0 20px 10px #000') {
-    -webkit-box-shadow : @string;
-    -moz-box-shadow    : @string;
-    box-shadow         : @string;
-    }
+  -webkit-box-shadow : @string;
+  -moz-box-shadow    : @string;
+  box-shadow         : @string;
+  }
 
 .transform-origin (@x:center, @y:center) {
-    -webkit-transform-origin: @x @y;
-    -moz-transform-origin:    @x @y;
-    -ms-transform-origin:     @x @y;
-    -o-transform-origin:      @x @y;
-    }
+  -webkit-transform-origin : @x @y;
+  -moz-transform-origin    : @x @y;
+  -ms-transform-origin     : @x @y;
+  -o-transform-origin      : @x @y;
+  }
 
 .gradient (@startColor: #eee, @endColor: white) {
-    background-color: @startColor;
-    background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
-    background: -webkit-linear-gradient(top, @startColor, @endColor);
-    background: -moz-linear-gradient(top, @startColor, @endColor);
-    background: -ms-linear-gradient(top, @startColor, @endColor);
-    background: -o-linear-gradient(top, @startColor, @endColor);
-    }
+  background-color : @startColor;
+  background       : -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  background       : -webkit-linear-gradient(top, @startColor, @endColor);
+  background       : -moz-linear-gradient(top, @startColor, @endColor);
+  background       : -ms-linear-gradient(top, @startColor, @endColor);
+  background       : -o-linear-gradient(top, @startColor, @endColor);
+  }
