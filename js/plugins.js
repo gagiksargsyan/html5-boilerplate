@@ -101,3 +101,66 @@ function charCounter(textAreaEl, counterEl, maxText) {
         $(counterEl).text(remaining);
     });
 }
+
+
+/*page controller for one page websites*/
+function pageController() {
+    switch (true) {
+        case (window.location.href.indexOf("about") > -1):
+
+            break;
+        case (window.location.href.indexOf("methodic") > -1):
+
+            break;
+        case (window.location.href.indexOf("parents") > -1):
+
+            break;
+        case (window.location.href.indexOf("training") > -1):
+
+            break;
+        case (window.location.href.indexOf("weekdays") > -1):
+
+            break;
+        case (window.location.href.indexOf("gallery") > -1):
+
+            break;
+        case (window.location.href.indexOf("contactUs") > -1):
+
+            break;
+        default:
+
+            break;
+    }
+}
+
+
+/*typing text animation plugin*/
+
+
+function drawLetters(a) {
+    var q = a.text().split('').length,
+        l = a.text().split('');
+
+    a.text('');
+    myTimer();
+    function myTimer() {
+        var i = 0;
+        test();
+        function test() {
+            setTimeout(function () {
+                a.append('<span class="flash">' + l[i] + '</span>');
+                i++;
+                if (i < q) {
+                    test();
+                } else {
+                    return false;
+                }
+                setTimeout(function () {
+                    a.find('.flash').addClass('light');
+                }, 200);
+            }, 80);
+        }
+
+
+    }
+}
