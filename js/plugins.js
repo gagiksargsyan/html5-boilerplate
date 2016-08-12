@@ -164,3 +164,6 @@ function drawLetters(a) {
 
     }
 }
+
+
+//for form validation use https://github.com/jzaefferer/jquery-validation
