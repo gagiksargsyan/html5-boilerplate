@@ -60,6 +60,16 @@ $('body').waitForImages(function () {
 //    }(0));
 //});
 
+function simple_opacity_slider(sliderItems) {
+    (function backgroundAnimation(index) {
+        sliderItems.removeClass('nonOpaque').eq(index).addClass('nonOpaque');
+        setTimeout(function () {
+            backgroundAnimation((index + 1) % sliderItems.length);
+        }, 6000);
+    }(0));
+}
+
+
 // Mouse move animations
 //$('#f_categories').mousemove(function (e) {
 //    var x = (e.pageX * -1 / 25 + $(window).width() / 50);
@@ -168,12 +178,3 @@ function drawLetters(a) {
 
 //for form validation use https://github.com/jzaefferer/jquery-validation
 
-
-function simple_opacity_slider(sliderItems) {
-    (function backgroundAnimation(index) {
-        sliderItems.removeClass('show').eq(index).addClass('show');
-        setTimeout(function () {
-            backgroundAnimation((index + 1) % sliderItems.length);
-        }, 6000);
-    }(0));
-}
