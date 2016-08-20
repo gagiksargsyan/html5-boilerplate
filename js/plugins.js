@@ -101,3 +101,12 @@ function charCounter(textAreaEl, counterEl, maxText) {
         $(counterEl).text(remaining);
     });
 }
+
+function simple_opacity_slider(sliderItems) {
+    (function backgroundAnimation(index) {
+        sliderItems.removeClass('show').eq(index).addClass('show');
+        setTimeout(function () {
+            backgroundAnimation((index + 1) % sliderItems.length);
+        }, 6000);
+    }(0));
+}
