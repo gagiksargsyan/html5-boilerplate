@@ -178,3 +178,20 @@ function drawLetters(a) {
 
 //for form validation use https://github.com/jzaefferer/jquery-validation
 
+
+/*
+ * DOC: adds jQuery function checks if element exists
+ * USAGE: $('.element').exists(function(){});
+ * */
+
+$.fn.exists = function(callback) {
+    var args = [].slice.call(arguments, 1);
+
+    if (this.length) {
+        callback.call(this, args);
+    }
+
+    return this;
+};
+
+
