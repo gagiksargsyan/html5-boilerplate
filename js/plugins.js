@@ -178,20 +178,9 @@ function drawLetters(a) {
 
 //for form validation use https://github.com/jzaefferer/jquery-validation
 
-
-/*
- * DOC: adds jQuery function checks if element exists
- * USAGE: $('.element').exists(function(){});
- * */
-
-$.fn.exists = function(callback) {
-    var args = [].slice.call(arguments, 1);
-
-    if (this.length) {
-        callback.call(this, args);
+//escape key event for modals
+$(document).keyup(function(e) {
+    if (e.keyCode == 27) { // escape key maps to keycode `27`
+        // <DO YOUR WORK HERE>
     }
-
-    return this;
-};
-
-
+});
