@@ -49,34 +49,35 @@ $('body').waitForImages(function () {
 });
 
 // simple slider use if needed
-//$(function () {
-//    var pageSliderElements = $('.SLIDER_ELEMENTS_CLASS_HERE');
-//    (function backgroundAnimation(index) {
-//        pageSliderElements.addClass('nonOpaque');
-//        pageSliderElements.removeClass('nonOpaque').eq(index).addClass('nonOpaque');
-//        setTimeout(function () {
-//            backgroundAnimation((index + 1) % pageSliderElements.length);
-//        }, 6000);
-//    }(0));
-//});
+/*$(function () {
+    var pageSliderElements = $('.SLIDER_ELEMENTS_CLASS_HERE');
+    (function backgroundAnimation(index) {
+        pageSliderElements.addClass('nonOpaque');
+        pageSliderElements.removeClass('nonOpaque').eq(index).addClass('nonOpaque');
+        setTimeout(function () {
+            backgroundAnimation((index + 1) % pageSliderElements.length);
+        }, 6000);
+    }(0));
+});*/
 
 function simple_opacity_slider(sliderItems) {
     (function backgroundAnimation(index) {
+        /*make element before adding lazyEl and opaque class display:none*/
+        sliderItems.eq(index + 1).addClass('lazyEl');
         sliderItems.removeClass('nonOpaque').eq(index).addClass('nonOpaque');
         setTimeout(function () {
             backgroundAnimation((index + 1) % sliderItems.length);
         }, 6000);
     }(0));
 }
-
-
 // Mouse move animations
-//$('#f_categories').mousemove(function (e) {
-//    var x = (e.pageX * -1 / 25 + $(window).width() / 50);
-//    $('.categories').css({'transform': 'translateX(' + x + 'px)', 'transition': 'transform 50ms ease'});
-//}).mouseout(function () {
-//    $(this).removeAttr("style");
-//});
+/*$('#f_categories').mousemove(function (e) {
+    var x = (e.pageX * -1 / 25 + $(window).width() / 50);
+    $('.categories').css({'transform': 'translateX(' + x + 'px)', 'transition': 'transform 50ms ease'});
+}).mouseout(function () {
+    $(this).removeAttr("style");
+});*/
+
 
 
 //timer function
@@ -179,7 +180,7 @@ function drawLetters(a) {
 //for form validation use https://github.com/jzaefferer/jquery-validation
 
 //escape key event for modals
-$(document).keyup(function(e) {
+$(document).keyup(function (e) {
     if (e.keyCode == 27) { // escape key maps to keycode `27`
         // <DO YOUR WORK HERE>
     }
