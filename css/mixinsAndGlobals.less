@@ -30,7 +30,7 @@
   transition-duration         : @transition;
   }
 
-.transition(@transition:"all 300ms ease") {
+.transition(@transition:~"all 300ms ease") {
   -webkit-backface-visibility : hidden;
   -moz-backface-visibility    : hidden;
   -ms-backface-visibility     : hidden;
@@ -93,6 +93,7 @@
   -webkit-animation : @name @duration @delay @ease;
   -moz-animation    : @name @duration @delay @ease;
   -ms-animation     : @name @duration @delay @ease;
+  animation     : @name @duration @delay @ease;
   }
 
 .box-shadow (@string:'0 0 20px 10px #000') {
@@ -106,6 +107,7 @@
   -moz-transform-origin    : @x @y;
   -ms-transform-origin     : @x @y;
   -o-transform-origin      : @x @y;
+  transform-origin      : @x @y;
   }
 
 .gradient (@startColor: #eee, @endColor: white) {
