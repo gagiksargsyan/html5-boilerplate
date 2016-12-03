@@ -70,7 +70,9 @@ function simple_opacity_slider(sliderItems) {
         }, 6000);
     }(0));
 }
+
 // Mouse move animations
+
 /*$('#f_categories').mousemove(function (e) {
     var x = (e.pageX * -1 / 25 + $(window).width() / 50);
     $('.categories').css({'transform': 'translateX(' + x + 'px)', 'transition': 'transform 50ms ease'});
