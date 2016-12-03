@@ -24,7 +24,6 @@
 
 // Place any jQuery/helper plugins in here.
 
-
 //Performs a smooth page scroll to an anchor on the same page.
 $(function () {
     $('a[href*="#"]:not([href="#"])').click(function () {
@@ -50,15 +49,15 @@ $('body').waitForImages(function () {
 
 // simple slider use if needed
 /*$(function () {
-    var pageSliderElements = $('.SLIDER_ELEMENTS_CLASS_HERE');
-    (function backgroundAnimation(index) {
-        pageSliderElements.addClass('nonOpaque');
-        pageSliderElements.removeClass('nonOpaque').eq(index).addClass('nonOpaque');
-        setTimeout(function () {
-            backgroundAnimation((index + 1) % pageSliderElements.length);
-        }, 6000);
-    }(0));
-});*/
+ var pageSliderElements = $('.SLIDER_ELEMENTS_CLASS_HERE');
+ (function backgroundAnimation(index) {
+ pageSliderElements.addClass('nonOpaque');
+ pageSliderElements.removeClass('nonOpaque').eq(index).addClass('nonOpaque');
+ setTimeout(function () {
+ backgroundAnimation((index + 1) % pageSliderElements.length);
+ }, 6000);
+ }(0));
+ });*/
 
 function simple_opacity_slider(sliderItems) {
     (function backgroundAnimation(index) {
@@ -74,11 +73,11 @@ function simple_opacity_slider(sliderItems) {
 // Mouse move animations
 
 /*$('#f_categories').mousemove(function (e) {
-    var x = (e.pageX * -1 / 25 + $(window).width() / 50);
-    $('.categories').css({'transform': 'translateX(' + x + 'px)', 'transition': 'transform 50ms ease'});
-}).mouseout(function () {
-    $(this).removeAttr("style");
-});*/
+ var x = (e.pageX * -1 / 25 + $(window).width() / 50);
+ $('.categories').css({'transform': 'translateX(' + x + 'px)', 'transition': 'transform 50ms ease'});
+ }).mouseout(function () {
+ $(this).removeAttr("style");
+ });*/
 
 
 
